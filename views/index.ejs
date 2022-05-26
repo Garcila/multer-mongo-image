@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Image Upload Test</title>
+		<link rel="stylesheet" href="/stylesheets/style.css" />
+	</head>
+	<body>
+		<h1>Upload Image</h1>
+		<form action="/uploadphoto" enctype="multipart/form-data" method="POST">
+			<input type="file" name="myImage" accept="image/*" />
+			<input type="submit" value="Upload Photo" />
+		</form>
+		<ul>
+			<% images.forEach(image => { %>
+			<img style="max-width: 200px" src="data:image/png;base64,<%= image %> " />
+			<% }); %>
+		</ul>
+	</body>
+</html>
