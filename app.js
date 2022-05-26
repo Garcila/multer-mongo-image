@@ -24,6 +24,8 @@ mongoose.connect(
 	}
 );
 
+mongoose.set("debug", true);
+
 // SET STORAGE
 var storage = multer.diskStorage({
 	destination: function (req, file, cb) {
