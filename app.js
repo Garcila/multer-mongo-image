@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 var imageModel = require("./models/imageModel");
 
 var app = express();
+const PORT = process.env.PORT || 3001;
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -64,8 +65,8 @@ app.post("/uploadphoto", upload.single("myImage"), (req, res) => {
 });
 
 //Code to start server
-app.listen(8080, function () {
-	console.log("Server Started at PORT 8080");
+app.listen(PORT, function () {
+	console.log(`Server Started at PORT ${PORT}`);
 });
 
 module.exports = app;
